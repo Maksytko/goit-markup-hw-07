@@ -39,8 +39,10 @@
   border-radius: 4px;
 }
 
-.advantages-item-bg > svg {
-  width: 70px;
-  height: 70px;
-  align-self: center;
+svg {
+  .advantages-item-bg > & {
+    width: 70px;
+    height: 70px;
+    align-self: center;
+  }
 }

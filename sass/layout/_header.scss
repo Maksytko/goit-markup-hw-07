@@ -7,30 +7,34 @@
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-property: color;
-}
 
-.navigation-list-link:hover,
-.navigation-list-link:focus {
-  color: #2196f3;
+  &:hover,
+  &:focus {
+    color: #2196f3;
+  }
 }
 
 .navigation-list-item {
   position: relative;
-}
 
-.chosen-navigation-list-link::before {
-  position: absolute;
-  content: "";
-  height: 4px;
-  width: 100%;
-  background: #2196f3;
-  border-radius: 2px;
-  top: 46px;
-  left: 0px;
+  &:not(:last-child) {
+    margin-right: 50px;
+  }
 }
 
 .chosen-navigation-list-link {
   color: #2196f3;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 4px;
+    width: 100%;
+    background: #2196f3;
+    border-radius: 2px;
+    top: 46px;
+    left: 0px;
+  }
 }
 
 .address-mail {
@@ -47,14 +51,26 @@
   transition-property: color;
 }
 
-.address-mail > svg {
-  width: 16px;
-  height: 12px;
-  margin-right: 10px;
-  fill: #757575;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: fill;
+svg {
+  .address-mail > & {
+    width: 16px;
+    height: 12px;
+    margin-right: 10px;
+    fill: #757575;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: fill;
+  }
+
+  .address-tel > & {
+    width: 10px;
+    height: 16px;
+    margin-right: 10px;
+    fill: #757575;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: fill;
+  }
 }
 
 .address-tel {
@@ -71,33 +87,24 @@
   transition-property: color;
 }
 
-.address-tel > svg {
-  width: 10px;
-  height: 16px;
-  margin-right: 10px;
-  fill: #757575;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: fill;
-}
-
-header a {
-  color: #000000;
-}
-
 .address-react:focus,
 .address-react:hover {
   color: #2196f3;
-}
 
-.address-react:focus .svg-react,
-.address-react:hover .svg-react {
-  fill: #2196f3;
+  & .svg-react {
+    fill: #2196f3;
+  }
 }
 
 header {
   padding: 25px 0px;
   border-bottom: 1px solid #ececec;
+}
+
+a {
+  header & {
+    color: #000000;
+  }
 }
 
 .header-list {
@@ -116,10 +123,6 @@ header {
   margin-left: 90px;
 }
 
-.navigation-list-item:not(:last-child) {
-  margin-right: 50px;
-}
-
 .address-header {
   margin-left: auto;
 }
@@ -128,6 +131,8 @@ header {
   display: flex;
 }
 
-.address-list-item:not(:last-child) {
-  margin-right: 50px;
+.address-list-item {
+  &:not(:last-child) {
+    margin-right: 50px;
+  }
 }

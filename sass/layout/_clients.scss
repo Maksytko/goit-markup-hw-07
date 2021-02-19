@@ -63,16 +63,18 @@
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-property: border-color;
+
+  &:hover,
+  &:focus {
+    border-color: #2196f3;
+  }
 }
 
-.client-list-item-link:hover,
-.client-list-item-link:focus {
-  border-color: #2196f3;
-}
-
-.client-list-item-link:hover .client-logo-react,
-.client-list-item-link:focus .client-logo-react {
-  fill: #2196f3;
+.client-logo-react {
+  .client-list-item-link:hover &,
+  .client-list-item-link:focus & {
+    fill: #2196f3;
+  }
 }
 
 .clients-section {
